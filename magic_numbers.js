@@ -35,14 +35,33 @@ CONSTRAINTS:
 
 The number of test cases is 20.
 */
-function magicNumbers (x, y) {
+
+console.log(magicNumbers(line));
+
+function magicNumbers (l) {
+	//debugger;
+	var nums = l.toString().split(' ');
+	var x = nums[0];
+	var y = nums[1];
 	var magicNums = [];
+	var magicString = "";
+
 	for (var i = x; i <= y; i++) {
 		if (magicTest(i)) {
 			magicNums.push(i);
 		}
 	}
-	return magicNums;
+
+	if (magicNums.length == 0) {
+		return -1;
+	}
+	else {
+		var magicString = "";
+		for (i = 0; i < magicNums.length; i++) {
+			magicString += magicNums[i] + " ";
+		}
+		return magicString.trim();
+	}
 }
 
 function nextNum(num, numArray, index) {
