@@ -1,4 +1,4 @@
-var line = 235;
+var line = 23;
 var nums = line.toString().split('');
 
 var sum = 0;
