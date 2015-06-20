@@ -1,9 +1,9 @@
 String.prototype.magicNumbers = function () {
-	var nums = this.toString().split(' ');
-	var x = nums[0];
-	var y = nums[1];
-	var magicNums = [];
-	var magicString = "";
+	var nums = this.toString().split(' '),
+	x = nums[0],
+	y = nums[1],
+	magicNums = [],
+	magicString = "";
 
 	for (var i = x; i <= y; i++) {
 		if (magicTest(i)) {
@@ -36,9 +36,9 @@ Array.prototype.noRepeats = function () {
 };
 
 Array.prototype.concatNumbers = function () {
-	var length = this.length;
-	var concatenatedNum = 0;
-	var j = length-1;
+	var length = this.length,
+	concatenatedNum = 0,
+	j = length-1;
 	for (var i = 0; i < length; i++) {
 		concatenatedNum += this[i] * Math.pow(10, j);
 		j--;
@@ -64,9 +64,11 @@ function nextNum(num, numArray, index) {
 	index = Number(index);
 	numArray = numArray.map(function(item) {
     return parseInt(item, 10);
-  });
-	var length = numArray.length;
-	var nextNumber;
+  	});
+
+	var length = numArray.length,
+	nextNumber;
+
 	if ((index + numArray[index]) <= (length - 1)) {
 		nextNumber = numArray[index + num]
 	} else {
@@ -76,21 +78,23 @@ function nextNum(num, numArray, index) {
 }
 
 function wrapAround(number, numberArray, idx) {
-	var longString = "";
-	var fullNumber = numberArray.join("");
+	var longString = "",
+	fullNumber = numberArray.join("");
+
 	while (longString.length <= (number + idx)) {
 		longString += fullNumber;
 	}
+
 	var newNum = longString.charAt(idx + number);
 	return newNum;
 }
 
 function magicTest (x) {
-	var moves = [];
-	var testNumArray = x.toString().split("");
-	var magicNum;
-	var magicNumArray = [];
-	var movesArray = [];
+	var moves = [],
+	testNumArray = x.toString().split(""),
+	magicNum,
+	magicNumArray = [],
+	movesArray = [];
 	
 
 	//build new magic number
